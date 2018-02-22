@@ -1,0 +1,166 @@
+body {
+
+	 	font-family: Anton, sans-serif;
+
+		background: url(../img/fondo.jpg);
+		color: white;
+	}
+
+h1 {
+		text-align: center;
+	}
+
+	h2 {
+ 		color: lightgrey;
+		text-shadow: 1px 1px 1px grey;
+	}
+
+	button {
+		margin-right: 1vw;
+		border-radius: 0.5em;
+		font-size: 20px;
+		border: 3px solid lightgrey;
+		background-color: #3a3a3a;
+		color: white;
+		transition: 0.5s background-color,0.5s border, 0.5s color;
+
+	}
+
+	button:hover {
+		border: 3px solid #3a3a3a;
+		background-color: lightgrey;
+		color: grey;
+	}
+
+	
+
+	.historia {
+		width: 85vw;
+		height: auto;
+		display: block;
+		background-color: #3a3a3a;
+		border-radius: 1em;
+		border: 2px solid white;
+		padding: 10px;
+	}
+
+	#header {
+		width: 100%;
+		height: 28px;
+		background-color: #3a3a3a;
+		padding: 1vw 0 1vw 0;
+	}
+	#botones {
+		float: right;
+
+	}
+
+	.borrar {
+		text-decoration:none;   
+
+		margin-right: 1vw;
+		border-radius: 0.5em;
+		font-size: 20px;
+		border: 3px solid lightgrey;
+		background-color: red;
+		color: white;
+		transition: 0.5s background-color,0.5s border, 0.5s color;
+	}
+
+	#añadir {
+		position: absolute;
+		top: 2vw;
+		border-radius: 1em;
+		background-color: black;
+		border: 5px solid lightgrey;
+		width: 60vw;
+		height: 35vw;
+		color: white;
+		margin: 0 auto;
+		padding: 3%;
+
+	}
+
+	ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color:white;
+	float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+ul.paginationUsuarios li {display: inline;}
+
+ul.paginationUsuarios li a {
+    color:white;
+	float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+ul.listadecategorias li a {
+    color:white;
+	
+}
+
+.actual{
+	color:red !important;
+}
+
+table, th, td {
+   border: 1px solid white;
+}
+
+table {
+    margin: 0 auto;
+}
+
+ /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 
+
+#modalhistoria {
+	color: black;
+}
