@@ -15,8 +15,7 @@ include "conexion.php";
     
   } else {
 
-    // FRAN: 75779f3c59d9d5ef85a0269d3fc75755f8b860e4
-    // LUCAS: bca20d078079cf3a2ff56ffc7dcabb0070edf57d
+    //Buscamos en la base de datos la historia que coincida con ese código
     $sql = "SELECT historiasDeTerror.id, historiasDeTerror.título, historiasDeTerror.historia, categorias.nombre as categoria FROM historiasDeTerror INNER JOIN categorias ON categorias.id=historiasDeTerror.categoria_id WHERE SHA1(CONCAT(historiasDeTerror.id,historiasDeTerror.título)) = '$api' " ;
 
     $res = $lnk->query($sql) ;
