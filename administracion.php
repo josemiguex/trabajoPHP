@@ -167,7 +167,7 @@ var idhistoria;
 			$.ajax({
                 url:   'operaciones/logout.php',
                 success:  function (data) {	
-                	window.location.href = "index.php";
+                	window.location.href = "historias";
 
 				}
 			});
@@ -356,7 +356,7 @@ $( "#dialogoañadir" ).dialog({
 
 	// Al hacer click en el botón de volver a la página principal
 	$("#goback").on("click",function(){
-		 window.location.href = "index.php";
+		 window.location.href = "historias";
 		
 	});
 

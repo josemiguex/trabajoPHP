@@ -13,11 +13,15 @@ include "../conexion.php";
 	}
     die();
 }
-
+$sql = "SELECT * FROM usuarios WHERE usuario='".$_POST['usr']."' AND contraseña='".$_POST['pass']."'" ;
+	$sentencia = $lnk -> query($sql) ;
+	
+	$datosusuario = $sentencia->fetchAll();
 	
 		// Crear las variables de sessión necesarias
 			$_SESSION["id"] = session_id();
 			$_SESSION["usr"] = $_POST['usr'];
+			$_SESSION["usuario_id"] = $datosusuario['0']['id'];
 			$_SESSION['tiempo'] = time();
 			include "../lista.php";
 

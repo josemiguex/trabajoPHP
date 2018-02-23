@@ -21,7 +21,7 @@ if (empty($_POST["page"]) || ($_POST["page"]==1) ) {
 $limit = " LIMIT ". $regcomienzo . "," . $numregxpagina;
 
 
-$sql = "SELECT historiasDeTerror.Título, historiasDeTerror.Historia, historiasDeTerror.id, usuarios.usuario, categorias.nombre  FROM historiasDeTerror INNER JOIN categorias ON categorias.id=historiasDeTerror.categoria_id INNER JOIN usuarios ON usuarios.id=historiasDeTerror.usuario_id" ;
+$sql = "SELECT historiasDeTerror.Título, historiasDeTerror.Historia, historiasDeTerror.id,historiasDeTerror.fecha, usuarios.usuario, categorias.nombre  FROM historiasDeTerror INNER JOIN categorias ON categorias.id=historiasDeTerror.categoria_id INNER JOIN usuarios ON usuarios.id=historiasDeTerror.usuario_id" ;
 //Según los parámetros que reciba se cambia la sentencia
 if (isset($_POST['busquedahistoria']) || isset($_POST['categoria'])) {
 	$sql .= " WHERE";
@@ -70,6 +70,7 @@ echo "<td>ID</td>";
 echo "<td>Título</td>";
 echo "<td>Categoría</td>";
 echo "<td>Usuario</td>";
+echo "<td>Fecha</td>";
 echo "</tr>";
 
 	foreach ($fla as $historia) {
@@ -79,6 +80,7 @@ echo "</tr>";
 		echo "<td style='display:none' class='contenido'>".$historia['Historia']."</td>";
 		echo "<td>".$historia['nombre']."</td>";
 		echo "<td>".$historia['usuario']."</td>";
+		echo "<td>".$historia['fecha']."</td>";
 		echo "<td><button class='borrar'>Eliminar</button></td>";
 		echo "<td><button class='modificar'>Modificar</button>";
 		echo "<tr>";

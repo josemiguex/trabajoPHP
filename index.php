@@ -35,6 +35,7 @@ var ordenartipo;
 var terminoabuscar;
 var catselect;
 var idhistoria;
+var numpage;
 
 $(document).ready(function() {
 
@@ -75,6 +76,7 @@ $(document).ready(function() {
 						usuario_id = data.trim().length;;
 						
 						$( "<button id='botonanadir'>Añadir historia</button>" ).appendTo( "#botones" );
+						$( "<button id='botonperfil'>Ver perfil</button>" ).appendTo( "#botones" );
 					
 					} else {
 						$("#infologin").html("Usuario/Contraseña incorrectos");
@@ -140,7 +142,7 @@ $(document).ready(function() {
 
 			usr: "Ingrese un nombre de usuario.",
 			name: "Pon tu nombre.",
-			email: "Pon tu email.",
+			email: "Pon un email correcto.",
 			pass: "Ingrese una contraseña."
 
 		},
@@ -171,6 +173,8 @@ $(document).ready(function() {
 						usr = $("#usrregistrer").val();
 
 						$( "<button id='botonanadir'>Añadir historia</button>" ).appendTo( "#botones" );
+					    $( "<button id='botonperfil'>Ver perfil</button>" ).appendTo( "#botones" );
+
 					},1000);
                 } else {
                 	$("#infologin").html("El usuario introducido ya existe en la base de datos");
@@ -285,6 +289,7 @@ $("#añadir").hide();
 					$("#contenedor").html(data);
 					$("#botonanadir").remove();
 					$("#administracion").remove();
+					$("#botonperfil").remove();
 					$( "<button id='botonregistrer'>Registrarse</button>" ).appendTo( "#botones" );
 					$(".borrar").remove();
 					$(".modificar").remove();
@@ -316,7 +321,8 @@ $( "#dialogomodificar" ).dialog({
 			$.post("operaciones/historia_modificar.php", {
 				idhistoria : $("#idhistoria").val(),
 				titulo : $("#titulomodificar").val(),
-				historia : $("#historiamodificar").val()
+				historia : $("#historiamodificar").val(),
+				page: numpage
 			},function(data,status){
 				//**** TODO : Solo cambiar la fila afectada
 				$("#contenedor").html(data);
@@ -369,9 +375,15 @@ $( "#dialogomodificar" ).dialog({
 	});
 	//Al hacer click en el botón de administración
 	$(document).on("click","#administracion",function(){
-		 window.location.href = "administracion.php";
+		 window.location.href = "administracion";
 		
 	});
+
+	$(document).on("click","#botonperfil",function(){
+		 window.location.href = "perfil";
+		
+	});
+
 
 
 // Buscador
@@ -403,7 +415,7 @@ $(".listadecategorias li a").on("click",function(){
 
 //Paginación
 $(document).on("click",".pagination li a",function(){
-	var numpage = $(this).data("page");
+	 numpage = $(this).data("page");
 	var desc = false;
 		if ($("#desc").is(":checked")) {
 			desc = true;
@@ -490,6 +502,7 @@ function mostrar(id) {
 		?>
 		<button id="botonanadir">Añadir historia</button>
 		<button id="botonlogout">Cerrar sesión</button>
+		<button id='botonperfil'>Ver perfil</button>
 		<?php
 		} else {
 			?>
